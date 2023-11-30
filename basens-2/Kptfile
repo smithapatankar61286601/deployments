@@ -10,14 +10,14 @@ upstream:
   git:
     repo: https://github.com/spatanka10/blueprints.git
     directory: basens
-    ref: basens/v4
+    ref: basens/v3
 upstreamLock:
   type: git
   git:
     repo: https://github.com/spatanka10/blueprints.git
     directory: basens
-    ref: basens/v4
-    commit: cc6fe382aa887c2859ae5d8ae56ac907e74c295a
+    ref: basens/v3
+    commit: e67be4b06a233caaba13a0b26272ea519529324d
 info:
   description: kpt package for provisioning namespace
 pipeline:
