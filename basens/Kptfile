@@ -1,0 +1,28 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata: # kpt-merge: /basens
+  name: basens
+  annotations:
+    config.kubernetes.io/local-config: "true"
+    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|basens'
+upstream:
+  type: git
+  git:
+    repo: https://github.com/spatanka10/blueprints.git
+    directory: basens
+    ref: basens/v6
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/spatanka10/blueprints.git
+    directory: basens
+    ref: basens/v6
+    commit: 740b842fac01fbe21d787c6bda1c3666bc875e5e
+info:
+  description: kpt package for provisioning namespace
+pipeline:
+  mutators:
+  - image: gcr.io/kpt-fn/set-namespace:v0.4.1
+    configPath: package-context.yaml
+  - image: gcr.io/kpt-fn/apply-replacements:v0.1.1
+    configPath: update-rolebinding.yaml
