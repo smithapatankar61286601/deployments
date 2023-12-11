@@ -3,7 +3,7 @@ kind: Deployment
 metadata: # kpt-merge: /network-function
   name: network-function
   annotations:
-    internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|network-function1'
+    internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|network-function-a'
     configmanagement.gke.io/managed: disabled
 spec:
   replicas: 1
