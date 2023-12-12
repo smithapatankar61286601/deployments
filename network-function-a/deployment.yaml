@@ -3,7 +3,7 @@ kind: Deployment
 metadata: # kpt-merge: /network-function
   name: network-function
   annotations:
-    internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|network-function-a|hij'       
+    internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|network-function-a|123'       
     config.kubernetes.io/depends-on: /namespaces/network-function-a/ConfigMap/test
 spec:
   replicas: 1
