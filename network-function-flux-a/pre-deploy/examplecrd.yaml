@@ -1,10 +1,8 @@
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
-metadata: # kpt-merge: /myapps.example.com
+metadata:
   # name must be in the form: <plural>.<group>
   name: myapps.example.com
-  annotations:
-    internal.kpt.dev/upstream-identifier: 'apiextensions.k8s.io|CustomResourceDefinition|default|myapps.example.com'
 spec:
   # group name to use for REST API: /apis/<group>/<version>
   group: example.com
@@ -26,8 +24,3 @@ spec:
         properties:
           spec:
             x-kubernetes-preserve-unknown-fields: true
-  conversion:
-    webhook:
-      clientConfig:
-        service:
-          namespace: network-function-flux-a
