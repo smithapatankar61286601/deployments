@@ -13,7 +13,7 @@ spec:
   - name: app-deploy
   sourceRef:
     kind: GitRepository
-    name: my-app
+    name: nc-app
   path: "./network-function-flux-a/post-deploy/"
   interval: 60m
   timeout: 5m
