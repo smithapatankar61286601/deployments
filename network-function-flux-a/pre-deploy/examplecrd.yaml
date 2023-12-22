@@ -30,4 +30,4 @@ spec:
     webhook:
       clientConfig:
         service:
-          namespace: example1
+          namespace: network-function-flux-a
