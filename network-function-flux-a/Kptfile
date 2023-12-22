@@ -1,0 +1,37 @@
+apiVersion: kpt.dev/v1
+kind: Kptfile
+metadata: # kpt-merge: /network-function-flux-a
+  name: network-function-flux-a
+  annotations:
+    config.kubernetes.io/local-config: "true"
+    internal.kpt.dev/upstream-identifier: 'kpt.dev|Kptfile|default|network-function-flux-a'
+upstream:
+  type: git
+  git:
+    repo: https://github.com/spatanka10/blueprints.git
+    directory: network-function-flux
+    ref: network-function-flux/v1
+upstreamLock:
+  type: git
+  git:
+    repo: https://github.com/spatanka10/blueprints.git
+    directory: network-function-flux
+    ref: network-function-flux/v1
+    commit: 8f8f95fbc7b4ab3ad212e36759869a92ed4948b5
+info:
+  description: kpt package for deploying network-function helm charts via flux
+pipeline:
+  mutators:
+  - name: PackageVariant.flux-nf-variant..0
+    image: gcr.io/kpt-fn/apply-setters:v0.2.0
+    configMap:
+      replicas: "3"
+  - name: PackageVariant.flux-nf-variant..1
+    image: gcr.io/kpt-fn/set-namespace:v0.4.1
+    configMap:
+      namespace: network-function-flux-a
+  - image: gcr.io/kpt-fn/set-namespace:v0.4.1
+    configPath: package-context.yaml
+  validators:
+  - name: PackageVariant.flux-nf-variant..0
+    image: gcr.io/kpt-fn/kubeval:v0.3
