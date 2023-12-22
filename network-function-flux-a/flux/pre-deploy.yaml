@@ -11,7 +11,7 @@ spec:
       name: target-kubeconfig
   sourceRef:
     kind: GitRepository
-    name: my-app
+    name: nc-app
   path: "./network-function-flux-a/pre-deploy/"
   interval: 60m
   timeout: 5m
