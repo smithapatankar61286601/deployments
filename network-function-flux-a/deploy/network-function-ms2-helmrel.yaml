@@ -22,7 +22,7 @@ spec:
         namespace: default
       reconcileStrategy: Revision
       interval: 1m
-  targetNamespace: example1
+  targetNamespace: network-function-flux-a
   valuesFrom:
   - kind: ConfigMap
     name: network-function-values
