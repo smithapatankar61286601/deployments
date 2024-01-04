@@ -25,9 +25,10 @@ pipeline:
   - name: PackageVariant.flux-nf-variant..0
     image: gcr.io/kpt-fn/apply-setters:v0.2.0
     configMap:
-      replicas: "3"
+      replicas: 3
       targetKubeconfig: target-kubeconfig
       targetNamespace: network-function-flux-a
+      gitreponame: nc-app
   - name: PackageVariant.flux-nf-variant..1
     image: gcr.io/kpt-fn/set-namespace:v0.4.1
     configMap:
