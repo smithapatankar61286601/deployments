@@ -1,0 +1,22 @@
+- apiVersion: kustomize.toolkit.fluxcd.io/v1
+  kind: Kustomization
+  metadata: # kpt-merge: default/app-deploy
+    name: app-deploy
+    namespace: default
+    annotations:
+      internal.kpt.dev/upstream-identifier: 'kustomize.toolkit.fluxcd.io|Kustomization|default|app-deploy'
+      config.kubernetes.io/index: '0'
+      internal.config.kubernetes.io/index: '0'
+      internal.config.kubernetes.io/path: 'flux/deploy.yaml'
+      config.kubernetes.io/path: 'flux/deploy.yaml'
+  spec:
+    dependsOn:
+    - name: app-pre-deploy
+    sourceRef:
+      kind: GitRepository
+      name: nc-app
+    path: "./network-function-flux/deploy/"
+    interval: 60m
+    timeout: 5m
+    prune: true
+    wait: true
