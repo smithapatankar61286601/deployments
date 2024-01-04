@@ -11,7 +11,7 @@ spec:
   sourceRef:
     kind: GitRepository
     name: nc-app
-  path: "./network-function-flux/deploy/"
+  path: "./network-function-flux-a/deploy/"
   interval: 60m
   timeout: 5m
   prune: true
