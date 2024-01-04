@@ -16,11 +16,11 @@ spec:
       version: '1.0.0'
       sourceRef:
         kind: GitRepository
-        name: my-app
+        name: nc-app # kpt-set: ${gitreponame}
         namespace: default
       reconcileStrategy: Revision
       interval: 1m
-  targetNamespace: example1 # kpt-set: ${targetNamespace}
+  targetNamespace: network-function-flux-a # kpt-set: ${targetNamespace}
   valuesFrom:
   - kind: ConfigMap
     name: network-function-values
