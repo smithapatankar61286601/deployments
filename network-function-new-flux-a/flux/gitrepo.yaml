@@ -1,0 +1,10 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
+metadata:
+  name: nc-app
+  namespace: network-function-new-flux-a
+spec:
+  interval: 5m
+  url: https://github.com/spatanka10/deployments
+  ref:
+    branch: main
