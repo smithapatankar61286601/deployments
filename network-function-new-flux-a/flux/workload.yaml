@@ -10,7 +10,7 @@ spec:
     secretRef:
       name: target-kubeconfig
   dependsOn:
-  - name: app-pre-deploy
+  - name: tenant
   sourceRef:
     kind: GitRepository
     name: nc-app
