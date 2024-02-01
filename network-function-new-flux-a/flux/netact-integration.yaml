@@ -1,16 +1,15 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
-metadata: # kpt-merge: default/app-post-deploy
-  name: app-post-deploy
-  namespace: network-function-new-flux-a
+metadata: # kpt-merge: default/netact-integration
+  name: netact-integration
   annotations:
-    internal.kpt.dev/upstream-identifier: 'kustomize.toolkit.fluxcd.io|Kustomization|default|app-post-deploy'
+    internal.kpt.dev/upstream-identifier: 'kustomize.toolkit.fluxcd.io|Kustomization|default|netact-integration'
 spec:
   kubeConfig:
     secretRef:
       name: target-kubeconfig
   dependsOn:
-  - name: app-deploy
+  - name: workload
   sourceRef:
     kind: GitRepository
     name: nc-app
