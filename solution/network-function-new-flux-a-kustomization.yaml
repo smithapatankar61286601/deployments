@@ -4,6 +4,8 @@ metadata:
   name: network-function-new-flux-a
   namespace: default
 spec:
+  dependsOn:
+  - name: infra
   interval: 15m
   path: ./network-function-new-flux-a/flux
   prune: true
