@@ -1,11 +1,11 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: network-function-new-flux-a
+  name: infra
   namespace: default
 spec:
   interval: 15m
-  path: ./network-function-new-flux-a/flux
+  path: ./infra/flux
   prune: true
   sourceRef:
     kind: GitRepository
