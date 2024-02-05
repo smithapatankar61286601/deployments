@@ -8,7 +8,7 @@ spec:
     secretRef:
       name: target-kubeconfig
   interval: 15m
-  path: ./infra/flux
+  path: ./infra/
   prune: true
   sourceRef:
     kind: GitRepository
