@@ -9,6 +9,7 @@ spec:
   interval: 15m
   path: ./network-function-new-flux-b/flux
   prune: true
+  wait: true
   sourceRef:
     kind: GitRepository
     name: nc-app
