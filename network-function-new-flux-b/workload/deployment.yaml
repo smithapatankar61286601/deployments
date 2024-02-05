@@ -3,7 +3,7 @@ kind: Deployment
 metadata: # kpt-merge: /network-function1
   name: network-function
   annotations:
-    internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|network-function1'
+    internal.kpt.dev/upstream-identifier: 'apps|Deployment|default|network-function'
   namespace: network-function-new-flux-b
 spec:
   replicas: 1
@@ -18,3 +18,5 @@ spec:
       containers:
       - name: nginx
         image: nginx:latest
+      nodeSelector:
+        cluster: core-workload
