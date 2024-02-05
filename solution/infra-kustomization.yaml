@@ -4,6 +4,9 @@ metadata:
   name: infra
   namespace: default
 spec:
+  kubeConfig:
+    secretRef:
+      name: target-kubeconfig
   interval: 15m
   path: ./infra/flux
   prune: true
