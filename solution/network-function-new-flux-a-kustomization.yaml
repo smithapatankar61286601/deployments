@@ -6,6 +6,9 @@ metadata:
 spec:
   dependsOn:
   - name: infra
+  kubeConfig:
+    secretRef:
+      name: target-kubeconfig
   interval: 15m
   path: ./network-function-new-flux-a/flux
   prune: true
