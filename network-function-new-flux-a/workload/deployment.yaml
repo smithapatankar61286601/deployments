@@ -17,4 +17,6 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:latest      
+        image: nginx:latest  
+      nodeSelector:
+        cluster: core-workload
