@@ -6,9 +6,6 @@ metadata: # kpt-merge: default/app-pre-deploy
   annotations:
     internal.kpt.dev/upstream-identifier: 'kustomize.toolkit.fluxcd.io|Kustomization|default|app-pre-deploy'
 spec:
-  kubeConfig:
-    secretRef:
-      name: target-kubeconfig
   sourceRef:
     kind: GitRepository
     name: nc-app
