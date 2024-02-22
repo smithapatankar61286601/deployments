@@ -6,9 +6,6 @@ metadata: # kpt-merge: default/app-post-deploy
   annotations:
     internal.kpt.dev/upstream-identifier: 'kustomize.toolkit.fluxcd.io|Kustomization|default|app-post-deploy'
 spec:
-  kubeConfig:
-    secretRef:
-      name: target-kubeconfig
   dependsOn:
   - name: app-deploy
   sourceRef:
