@@ -6,9 +6,6 @@ metadata: # kpt-merge: default/network-function-ms1
   annotations:
     internal.kpt.dev/upstream-identifier: 'helm.toolkit.fluxcd.io|HelmRelease|default|network-function-ms1'
 spec:
-  kubeConfig:
-    secretRef:
-      name: target-kubeconfig # kpt-set: ${targetKubeconfig}
   interval: 1m
   chart:
     spec:
