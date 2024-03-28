@@ -2,7 +2,7 @@ apiVersion: batch/v1
 kind: Job
 metadata: # kpt-merge: example1/job2
   name: job2
-  namespace: network-function-flux-a
+  namespace: example1
   annotations:
     internal.kpt.dev/upstream-identifier: 'batch|Job|example1|job2'
 spec:
