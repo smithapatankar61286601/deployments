@@ -8,13 +8,13 @@ metadata: # kpt-merge: /network-function-new-flux-a
 upstream:
   type: git
   git:
-    repo: https://github.com/spatanka10/blueprints.git
+    repo: https://github.com/smithapatankar61286601/blueprints.git
     directory: network-function-new-flux
     ref: network-function-new-flux/v1
 upstreamLock:
   type: git
   git:
-    repo: https://github.com/spatanka10/blueprints.git
+    repo: https://github.com/smithapatankar61286601/blueprints.git
     directory: network-function-new-flux
     ref: network-function-new-flux/v1
     commit: 4d3bb33c429a9392874b512c2fccdc684a8163e1
@@ -22,19 +22,5 @@ info:
   description: kpt package for deploying network-function helm charts via flux
 pipeline:
   mutators:
-  - name: PackageVariant.flux-nf-variant-demo..0
-    image: gcr.io/kpt-fn/apply-setters:v0.2.0
-    configMap:
-      replicas: "3"
-      gitreponame: nc-app
-      targetKubeconfig: target-kubeconfig
-      targetNamespace: network-function-new-flux-a
-  - name: PackageVariant.flux-nf-variant-demo..1
-    image: gcr.io/kpt-fn/set-namespace:v0.4.1
-    configMap:
-      namespace: network-function-new-flux-a
   - image: gcr.io/kpt-fn/set-namespace:v0.4.1
     configPath: package-context.yaml
-  validators:
-  - name: PackageVariant.flux-nf-variant-demo..0
-    image: gcr.io/kpt-fn/kubeval:v0.3
