@@ -8,13 +8,13 @@ metadata: # kpt-merge: /network-function-b
 upstream:
   type: git
   git:
-    repo: https://github.com/spatanka10/blueprints.git
+    repo: https://github.com/smithapatankar61286601/blueprints.git
     directory: network-function
     ref: network-function/v1
 upstreamLock:
   type: git
   git:
-    repo: https://github.com/spatanka10/blueprints.git
+    repo: https://github.com/smithapatankar61286601/blueprints.git
     directory: network-function
     ref: network-function/v1
     commit: d9e00db435bb092adf764cefd8f110cd8b4d47fc
